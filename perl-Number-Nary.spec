@@ -1,5 +1,5 @@
 %define upstream_name    Number-Nary
-%define upstream_version 0.108
+%define upstream_version 1.100311
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
