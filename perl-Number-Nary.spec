@@ -1,24 +1,24 @@
 %define upstream_name    Number-Nary
 %define upstream_version 1.100311
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Encode and decode numbers as n-ary strings
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Number/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Encode and decode numbers as n-ary strings
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Number/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Carp)
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(List::MoreUtils)
-BuildRequires: perl(Sub::Exporter)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(UDCode)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Sub::Exporter)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(UDCode)
+BuildArch:	noarch
 
 %description
 no description found
@@ -27,24 +27,33 @@ no description found
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 1.100.311-2mdv2011.0
++ Revision: 654268
+- rebuild for updated spec-helper
+
+* Mon Feb 01 2010 Jérôme Quelin <jquelin@mandriva.org> 1.100.311-1mdv2011.0
++ Revision: 498981
+- update to 1.100311
+
+* Thu Dec 03 2009 Jérôme Quelin <jquelin@mandriva.org> 0.108.0-1mdv2010.1
++ Revision: 472801
+- import perl-Number-Nary
 
 
+* Thu Dec 03 2009 cpan2dist 0.108-1mdv
+- initial mdv release, generated with cpan2dist
