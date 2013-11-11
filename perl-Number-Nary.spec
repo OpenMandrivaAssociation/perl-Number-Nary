@@ -1,15 +1,15 @@
 %define upstream_name    Number-Nary
-%define upstream_version 1.100311
+%define upstream_version 1.100312
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Encode and decode numbers as n-ary strings
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Number/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Number/Number-Nary-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Carp)
@@ -57,3 +57,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Thu Dec 03 2009 cpan2dist 0.108-1mdv
 - initial mdv release, generated with cpan2dist
+
