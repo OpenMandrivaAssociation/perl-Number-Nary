@@ -8,7 +8,7 @@ Release:	3
 Summary:	Encode and decode numbers as n-ary strings
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Number/Number-Nary-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
