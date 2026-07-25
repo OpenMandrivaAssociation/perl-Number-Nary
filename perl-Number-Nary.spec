@@ -1,15 +1,15 @@
 %define upstream_name    Number-Nary
-%define upstream_version 1.100312
+%define upstream_version 1.100313
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Encode and decode numbers as n-ary strings
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Number/Number-Nary-%{upstream_version}.tar.gz
+Url:		https://github.com/rjbs/Number-Nary
+Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Number-Nary-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
