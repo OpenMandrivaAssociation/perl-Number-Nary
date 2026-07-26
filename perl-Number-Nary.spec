@@ -1,15 +1,13 @@
 %define upstream_name    Number-Nary
-%define upstream_version 1.100313
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.100313
+Release:	2
 
 Summary:	Encode and decode numbers as n-ary strings
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/rjbs/Number-Nary
-Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Number-Nary-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Number-Nary-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ BuildArch:	noarch
 no description found
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
